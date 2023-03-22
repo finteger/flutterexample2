@@ -36,10 +36,37 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Image.asset('assets/images/download.png',
-            width: 420, height: 350, fit: BoxFit.fill),
-      ]),
+      body: Container(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+            Container(
+                height: 320,
+                width: 433,
+                alignment: Alignment.center,
+                color: Colors.blue,
+                child: ListView(scrollDirection: Axis.horizontal, children: [
+                  Text('Hello',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 184,
+                        wordSpacing: 15,
+                      )),
+                  Image.asset('assets/images/download.png',
+                      width: 433, height: 340, fit: BoxFit.fill),
+                  Image.asset('assets/images/download.png',
+                      width: 433, height: 340, fit: BoxFit.fill),
+                ])),
+            Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Text('Welcome to RDPolytech',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 34,
+                  )),
+              Image.asset('assets/images/download.png',
+                  width: 433, height: 340, fit: BoxFit.fill),
+            ])
+          ])),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         items: [
@@ -50,6 +77,10 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.pageview),
             label: 'Page 1',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pageview),
+            label: 'Page 2',
           ),
         ],
         onTap: (int index) {
@@ -78,8 +109,47 @@ class Page1 extends StatelessWidget {
       appBar: AppBar(
         title: Text('Page 1'),
       ),
-      body: Center(
-        child: Text('This is Page 1'),
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Colors.blue,
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage('assets/images/earth.jpg'),
+            fit: BoxFit.cover,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 160, 141, 141),
+              spreadRadius: 7,
+              blurRadius: 6,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+          ),
+          Center(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Earth',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 64,
+                        wordSpacing: 15,
+                      )),
+                  Stack(children: [
+                    Container(
+                        width: 40,
+                        height: 40,
+                        decoration: const BoxDecoration(color: Colors.red)),
+                    const Text("Hello"),
+                  ])
+                ]),
+          ),
+        ]),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
