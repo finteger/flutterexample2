@@ -35,8 +35,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
+      appBar: AppBar(title: Text('Home Page'), actions: [
+        IconButton(
+          icon: const Icon(Icons.add_alert),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const Icon(Icons.info),
+          onPressed: () {},
+        ),
+      ]),
+      drawer: const Drawer(
+        backgroundColor: Colors.blue,
       ),
       body: Container(
           child: Column(
@@ -53,11 +63,111 @@ class HomePage extends StatelessWidget {
                         height: 320,
                         width: 433,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Software Development.'))
+                            Container(
+                                height: 240,
+                                width: 200,
+                                decoration: const BoxDecoration(
+                                  color: Colors.blue,
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/software.jpg'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 160, 141, 141),
+                                      spreadRadius: 7,
+                                      blurRadius: 6,
+                                      offset: Offset(0, 3),
+                                    ),
+                                  ],
+                                )),
+                            Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Padding(padding: EdgeInsets.all(10.0)),
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      child: Text('Software Development.')),
+                                ]),
+                          ],
+                        )),
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                                height: 240,
+                                width: 200,
+                                decoration: const BoxDecoration(
+                                  color: Colors.blue,
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/nursing.jpg'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 160, 141, 141),
+                                      spreadRadius: 7,
+                                      blurRadius: 6,
+                                      offset: Offset(0, 3),
+                                    ),
+                                  ],
+                                )),
+                            Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Padding(padding: EdgeInsets.all(10.0)),
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      child: Text('Nursing Program.')),
+                                ]),
+                          ],
+                        )),
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                                height: 240,
+                                width: 200,
+                                decoration: const BoxDecoration(
+                                  color: Colors.blue,
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/engineer.jpg'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 160, 141, 141),
+                                      spreadRadius: 7,
+                                      blurRadius: 6,
+                                      offset: Offset(0, 3),
+                                    ),
+                                  ],
+                                )),
+                            Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Padding(padding: EdgeInsets.all(10.0)),
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      child: Text('Electrical Engineering.')),
+                                ]),
                           ],
                         )),
                     Container(
@@ -68,29 +178,7 @@ class HomePage extends StatelessWidget {
                           children: [
                             ElevatedButton(
                                 onPressed: () {},
-                                child: Text('Nursing Program.'))
-                          ],
-                        )),
-                    Container(
-                        height: 320,
-                        width: 433,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Electrical Engineering.'))
-                          ],
-                        )),
-                    Container(
-                        height: 320,
-                        width: 433,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Business Administration.'))
+                                child: Text('Business Administration.')),
                           ],
                         )),
                   ]),
@@ -98,30 +186,11 @@ class HomePage extends StatelessWidget {
                     Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Row(children: [
-                          AnimatedTextKit(
-                            animatedTexts: [
-                              RotateAnimatedText('AWESOME',
-                                  textStyle: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      backgroundColor: Colors.blue)),
-                              RotateAnimatedText('OPTIMISTIC',
-                                  textStyle: TextStyle(
-                                      letterSpacing: 3,
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.orange)),
-                              RotateAnimatedText(
-                                'DIFFERENT',
-                                textStyle: TextStyle(
-                                  fontSize: 30,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ],
-                            isRepeatingAnimation: true,
-                            totalRepeatCount: 10,
-                            pause: Duration(milliseconds: 1000),
+                          Text(
+                            'Swipe Right',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           Icon(
                             Icons.arrow_right_alt_outlined,
@@ -131,13 +200,30 @@ class HomePage extends StatelessWidget {
                   ]),
                 ])),
             Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text('Welcome to RDPolytech',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 34,
-                  )),
-              Image.asset('assets/images/download.png',
-                  width: 433, height: 340, fit: BoxFit.fill),
+              Stack(children: <Widget>[
+                Image.asset('assets/images/download.png',
+                    width: 473, height: 380, fit: BoxFit.fill),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    RotateAnimatedText('When you get here, you understand.',
+                        textStyle: TextStyle(
+                            letterSpacing: 3,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.orange)),
+                    RotateAnimatedText(
+                      'Welcome to RDPolytech',
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                  isRepeatingAnimation: true,
+                  repeatForever: true,
+                  pause: Duration(milliseconds: 1000),
+                ),
+              ])
             ])
           ])),
       bottomNavigationBar: BottomNavigationBar(
@@ -252,4 +338,3 @@ class Page1 extends StatelessWidget {
     );
   }
 }
-
