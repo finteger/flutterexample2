@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import, sized_box_for_whitespace
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,18 +46,89 @@ class HomePage extends StatelessWidget {
                 height: 320,
                 width: 433,
                 alignment: Alignment.center,
-                color: Colors.blue,
-                child: ListView(scrollDirection: Axis.horizontal, children: [
-                  Text('Hello',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 184,
-                        wordSpacing: 15,
-                      )),
-                  Image.asset('assets/images/download.png',
-                      width: 433, height: 340, fit: BoxFit.fill),
-                  Image.asset('assets/images/download.png',
-                      width: 433, height: 340, fit: BoxFit.fill),
+                color: Colors.white,
+                child: Stack(children: <Widget>[
+                  ListView(scrollDirection: Axis.horizontal, children: [
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Software Development.'))
+                          ],
+                        )),
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Nursing Program.'))
+                          ],
+                        )),
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Electrical Engineering.'))
+                          ],
+                        )),
+                    Container(
+                        height: 320,
+                        width: 433,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text('Business Administration.'))
+                          ],
+                        )),
+                  ]),
+                  Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                    Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Row(children: [
+                          AnimatedTextKit(
+                            animatedTexts: [
+                              RotateAnimatedText('AWESOME',
+                                  textStyle: TextStyle(
+                                      fontSize: 30,
+                                      color: Colors.white,
+                                      backgroundColor: Colors.blue)),
+                              RotateAnimatedText('OPTIMISTIC',
+                                  textStyle: TextStyle(
+                                      letterSpacing: 3,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.orange)),
+                              RotateAnimatedText(
+                                'DIFFERENT',
+                                textStyle: TextStyle(
+                                  fontSize: 30,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ],
+                            isRepeatingAnimation: true,
+                            totalRepeatCount: 10,
+                            pause: Duration(milliseconds: 1000),
+                          ),
+                          Icon(
+                            Icons.arrow_right_alt_outlined,
+                            size: 44,
+                          ),
+                        ])),
+                  ]),
                 ])),
             Column(mainAxisAlignment: MainAxisAlignment.end, children: [
               Text('Welcome to RDPolytech',
@@ -179,3 +252,4 @@ class Page1 extends StatelessWidget {
     );
   }
 }
+
